@@ -49,9 +49,21 @@ backspace.addEventListener('click', function(e) {
 
 /* this function display for whatever it has been called inside the board */
 function dis(val) {
+    let res = checkNums(val);
+    console.log(res);
     const p = document.createElement('p');
-    p.innerText = (val);
+    p.innerText = (res);
     displaySection.appendChild(p);
+}
+
+
+/* check if number which passed on is Integer or Float */ 
+function checkNums (num1) {
+    if (Number.isInteger(num1)) {
+        return parseInt(num1);
+    } else {
+        return parseFloat(num1)
+    }
 }
 
 
